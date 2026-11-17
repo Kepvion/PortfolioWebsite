@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Priyanka Kumari | IIIT Agartala · Amazon Future Engineer Scholar</title>
+  <title>Priyanka Kumari | IIIT Agartala · Systems & Security Engineer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -11,13 +11,13 @@
       theme: {
         extend: {
           colors: {
-            background: '#0a0a0d',
-            surface: '#121217',
-            surfaceHover: '#181820',
-            borderSubtle: '#22222a',
+            background: '#08080b',
+            surface: '#111116',
+            surfaceGlow: '#181822',
+            borderSubtle: '#22222d',
             accent: '#3b82f6',
-            textPrimary: '#f4f4f6',
-            textSecondary: '#a1a1aa'
+            textPrimary: '#f4f4f7',
+            textSecondary: '#9ca3af'
           },
           fontFamily: {
             sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
@@ -29,182 +29,243 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    body { background-color: #0a0a0d; color: #f4f4f6; font-family: 'Inter', sans-serif; }
+    body {
+      background-color: #08080b;
+      color: #f4f4f7;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    /* Linear/Vercel Spotlight Glow Effect on Cards */
+    .spotlight-card {
+      position: relative;
+      background: #111116;
+      border-radius: 0.85rem;
+      border: 1px solid #22222d;
+      overflow: hidden;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .spotlight-card:hover {
+      transform: translateY(-2px);
+      border-color: #3b82f688;
+    }
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(400px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(59, 130, 246, 0.12), transparent 40%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Ambient Background Glow */
+    .ambient-glow {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white">
 
+  <!-- Ambient Light Effect -->
+  <div class="ambient-glow"></div>
+
   <!-- Main Container -->
-  <main class="max-w-3xl mx-auto px-6 py-14 sm:py-20 w-full">
+  <main class="relative z-10 max-w-3xl mx-auto px-6 py-14 sm:py-20 w-full">
     
     <!-- Hero / Profile Header -->
-    <header class="mb-12">
+    <header class="mb-14">
       <div class="flex flex-wrap items-center gap-2 mb-4">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-amber-950/70 text-amber-300 border border-amber-800/80">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-amber-950/70 text-amber-300 border border-amber-800/80 shadow-sm shadow-amber-900/20">
           ⭐ Amazon Future Engineer Scholar
         </span>
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-blue-950/70 text-blue-300 border border-blue-800/80">
-          🏛️ IIIT Agartala '26
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-950/70 text-blue-300 border border-blue-800/80 shadow-sm shadow-blue-900/20">
+          🏛️ IIIT Agartala (CGPA: 8.67)
         </span>
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-emerald-950/70 text-emerald-300 border border-emerald-800/80">
-          ⚡ Available for Internships
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-950/70 text-emerald-300 border border-emerald-800/80">
+          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+          Available for Internships
         </span>
       </div>
 
-      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-textPrimary mb-3">
+      <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-textPrimary mb-4">
         Priyanka Kumari
       </h1>
       <p class="text-base sm:text-lg text-textSecondary leading-relaxed">
         Computer Science undergraduate at <strong class="text-textPrimary font-semibold">IIIT Agartala</strong>. 
-        Full-stack engineer building production SaaS dashboards, developer tooling, and API backends with React 19, Node.js, and modern cloud stacks.
+        Building resilient full-stack systems, developer tooling, and investigating application security boundaries across cloud & mobile platforms.
       </p>
 
-      <!-- Contact & Social Links -->
-      <div class="flex flex-wrap items-center gap-4 mt-6 text-sm font-mono text-textSecondary">
-        <a href="https://github.com/Kepvion" target="_blank" class="hover:text-blue-400 transition-colors">GitHub ↗</a>
-        <a href="https://linkedin.com/in/priyanka-kumari-059776271" target="_blank" class="hover:text-blue-400 transition-colors">LinkedIn ↗</a>
-        <a href="https://x.com/Kepvion" target="_blank" class="hover:text-blue-400 transition-colors">X (Twitter) ↗</a>
-        <a href="mailto:priyanka06kumari0403@gmail.com" class="hover:text-blue-400 transition-colors">Email ↗</a>
-        <span class="text-zinc-600">|</span>
-        <span class="text-textSecondary">📞 +91-8252994451</span>
+      <!-- Action & Social Links -->
+      <div class="flex flex-wrap items-center gap-3 mt-6 text-xs sm:text-sm font-mono text-textSecondary">
+        <a href="https://github.com/Kepvion/Kepvion/raw/main/Priyanka_Kumari_Resume.pdf" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium transition-all shadow-md shadow-blue-600/25">
+          <span>📄</span> Download Resume (PDF)
+        </a>
+        <a href="https://github.com/Kepvion" target="_blank" class="px-3 py-2 rounded-lg bg-surface border border-borderSubtle hover:border-zinc-600 transition-colors">GitHub ↗</a>
+        <a href="https://linkedin.com/in/kepvion" target="_blank" class="px-3 py-2 rounded-lg bg-surface border border-borderSubtle hover:border-zinc-600 transition-colors">LinkedIn ↗</a>
+        <a href="https://x.com/Kepvion" target="_blank" class="px-3 py-2 rounded-lg bg-surface border border-borderSubtle hover:border-zinc-600 transition-colors">X (Twitter) ↗</a>
+        <a href="mailto:priyanka06kumari0403@gmail.com" class="px-3 py-2 rounded-lg bg-surface border border-borderSubtle hover:border-zinc-600 transition-colors">Email ↗</a>
       </div>
     </header>
 
-    <!-- Key Credentials & Badges Grid -->
-    <section class="mb-12">
+    <!-- Vulnerability Research & Disclosures (Hero Focus) -->
+    <section class="mb-14">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-textSecondary">Vulnerability Research & Disclosures</h2>
+        <span class="text-[11px] font-mono text-blue-400">Verified Findings</span>
+      </div>
+      
+      <div class="space-y-3">
+        <!-- Google Android Report -->
+        <div class="spotlight-card p-5">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <div class="font-semibold text-textPrimary text-sm sm:text-base">Google Android Security Team — Logic Flaw</div>
+              <div class="text-xs text-textSecondary mt-0.5">Unauthorized Remote Device Wipe in Android 15 & Find My Device</div>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 px-2.5 py-0.5 rounded bg-emerald-950/70 border border-emerald-800">Issue #485222924 · Triaged</span>
+          </div>
+          <p class="text-xs text-textSecondary leading-relaxed">
+            Identified multi-account authorization boundary flaws allowing secondary profiles to trigger remote factory wipes without owner notification. Report was investigated, triaged, and logged by Google engineering for future OS-level remediation.
+          </p>
+        </div>
+
+        <!-- HackerOne Flipkart Report -->
+        <div class="spotlight-card p-5">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <div class="font-semibold text-textPrimary text-sm sm:text-base">Flipkart / Ekart Logistics — Sequential IDOR</div>
+              <div class="text-xs text-textSecondary mt-0.5">Predictable Tracking Endpoint Exposing Customer PII Globally</div>
+            </div>
+            <span class="text-xs font-mono text-blue-400 px-2.5 py-0.5 rounded bg-blue-950/70 border border-blue-800">HackerOne #3759759 · Confirmed</span>
+          </div>
+          <p class="text-xs text-textSecondary leading-relaxed">
+            Reported missing authorization checks on public parcel tracking endpoints. Confirmed by security analysts as allowing mass enumeration of full recipient names, checkpoint locations, and shipping logs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Honors & Fellowships Grid -->
+    <section class="mb-14">
       <h2 class="text-xs font-mono uppercase tracking-widest text-textSecondary mb-4">Honors & Competitions</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
-        <div class="p-3.5 rounded-lg bg-surface border border-borderSubtle flex items-start gap-3">
-          <span class="text-amber-400 text-base">🏆</span>
+        <div class="spotlight-card p-4 flex items-start gap-3">
+          <span class="text-amber-400 text-lg">🏆</span>
           <div>
             <div class="font-semibold text-textPrimary">Amazon Future Engineer Scholar</div>
-            <div class="text-textSecondary">Selected for prestigious Amazon national tech scholarship.</div>
+            <div class="text-textSecondary mt-0.5">Selected for Amazon's flagship national merit tech scholarship.</div>
           </div>
         </div>
-        <div class="p-3.5 rounded-lg bg-surface border border-borderSubtle flex items-start gap-3">
-          <span class="text-blue-400 text-base">🎯</span>
+        <div class="spotlight-card p-4 flex items-start gap-3">
+          <span class="text-blue-400 text-lg">🎓</span>
           <div>
-            <div class="font-semibold text-textPrimary">Flipkart GRID 2025 Shortlisted</div>
-            <div class="text-textSecondary">National tech competition qualifier.</div>
+            <div class="font-semibold text-textPrimary">Aspire Leaders Fellow</div>
+            <div class="text-textSecondary mt-0.5">Leadership fellowship founded by Harvard University faculty.</div>
           </div>
         </div>
-        <div class="p-3.5 rounded-lg bg-surface border border-borderSubtle flex items-start gap-3">
-          <span class="text-purple-400 text-base">⚡</span>
+        <div class="spotlight-card p-4 flex items-start gap-3">
+          <span class="text-purple-400 text-lg">⚡</span>
           <div>
-            <div class="font-semibold text-textPrimary">Inter-IIIT Hackathon Finalist</div>
-            <div class="text-textSecondary">Selected among top teams across national IIIT institutes.</div>
+            <div class="font-semibold text-textPrimary">Inter-IIIT Hackathon Top 5</div>
+            <div class="text-textSecondary mt-0.5">National Finalist at UDBHAV 2025 across all competing IIITs.</div>
           </div>
         </div>
-        <div class="p-3.5 rounded-lg bg-surface border border-borderSubtle flex items-start gap-3">
-          <span class="text-emerald-400 text-base">🛡️</span>
+        <div class="spotlight-card p-4 flex items-start gap-3">
+          <span class="text-emerald-400 text-lg">🎯</span>
           <div>
-            <div class="font-semibold text-textPrimary">Cybersecurity Hackathon Finalist</div>
-            <div class="text-textSecondary">State-Level Security & Ideathon Runner-Up 2025.</div>
+            <div class="font-semibold text-textPrimary">Flipkart GRID & SIH Finalist</div>
+            <div class="text-textSecondary mt-0.5">National screening qualifiers & campus finalist (SIH 2024/2025).</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Featured Engineering Projects -->
-    <section class="mb-12">
-      <h2 class="text-xs font-mono uppercase tracking-widest text-textSecondary mb-4">Featured Production Systems</h2>
+    <!-- Featured Systems & Software -->
+    <section class="mb-14">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-textSecondary mb-4">Featured Systems & Software</h2>
       
       <div class="space-y-4">
+        <!-- Aegis-Trap -->
+        <article class="spotlight-card p-5">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <h3 class="text-base font-semibold text-textPrimary">Aegis-Trap: Network Tarpit & Threat Engine</h3>
+              <p class="text-xs text-textSecondary mt-0.5">Active defense system neutralizing malicious scrapers via persistent sockets</p>
+            </div>
+            <span class="text-xs font-mono text-purple-400 px-2 py-0.5 rounded bg-purple-950/60 border border-purple-800">Python · Sockets · TCP</span>
+          </div>
+          <p class="text-xs text-textSecondary mb-3 leading-relaxed">
+            Exhausts automated bot connection concurrency using delayed socket transmissions, while parsing raw TCP packet streams into actionable threat classification telemetry.
+          </p>
+          <div class="flex items-center gap-3 text-xs font-mono">
+            <a href="https://github.com/Kepvion" target="_blank" class="text-blue-400 hover:underline">View Source Code ↗</a>
+          </div>
+        </article>
+
+        <!-- Coding Portfolio Sync -->
+        <article class="spotlight-card p-5">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <h3 class="text-base font-semibold text-textPrimary">Coding Portfolio Sync — Developer Tooling</h3>
+              <p class="text-xs text-textSecondary mt-0.5">Multi-platform CP metric sync engine with OAuth 2.0</p>
+            </div>
+            <span class="text-xs font-mono text-blue-400 px-2 py-0.5 rounded bg-blue-950/60 border border-blue-800">Node.js · Express · React · REST</span>
+          </div>
+          <p class="text-xs text-textSecondary mb-3 leading-relaxed">
+            Engineered with strict app.js / server.js separation for test automation. Queries LeetCode (GraphQL) and Codeforces (REST) to extract verified metrics, generating live SVG badges committed to GitHub READMEs.
+          </p>
+          <div class="flex items-center gap-3 text-xs font-mono">
+            <a href="https://github.com/Kepvion/coding-portfolio-sync" target="_blank" class="text-blue-400 hover:underline">View Source Code ↗</a>
+          </div>
+        </article>
+
         <!-- Clabsy -->
-        <article class="p-5 rounded-xl bg-surface border border-borderSubtle hover:border-zinc-700 transition-all">
+        <article class="spotlight-card p-5">
           <div class="flex items-start justify-between mb-2">
             <div>
               <h3 class="text-base font-semibold text-textPrimary">Clabsy — Real Estate CRM & Sales SaaS</h3>
               <p class="text-xs text-textSecondary mt-0.5">Commercial SaaS dashboard for customer pipelines, inventory, and site visits</p>
             </div>
-            <span class="text-xs font-mono text-blue-400 px-2 py-0.5 rounded bg-blue-950/60 border border-blue-800">React 19 · Tailwind v4</span>
+            <span class="text-xs font-mono text-emerald-400 px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800">React 19 · Tailwind v4 · Context API</span>
           </div>
           <p class="text-xs text-textSecondary mb-3 leading-relaxed">
-            Engineered centralized state management with React Context API across 8+ views, dynamic plot booking workflows, lead scoring, and automated toast feedback.
+            Engineered centralized state management across 8+ views, dynamic plot booking workflows, lead scoring, and automated toast feedback.
           </p>
           <div class="flex items-center gap-3 text-xs font-mono">
-            <a href="https://github.com/Kepvion/clabsy-sales" target="_blank" class="text-textPrimary hover:underline">Code Repository ↗</a>
+            <a href="https://github.com/Kepvion/clabsy-sales" target="_blank" class="text-blue-400 hover:underline">View Source Code ↗</a>
           </div>
         </article>
-
-        <!-- ApexStore -->
-        <article class="p-5 rounded-xl bg-surface border border-borderSubtle hover:border-zinc-700 transition-all">
-          <div class="flex items-start justify-between mb-2">
-            <div>
-              <h3 class="text-base font-semibold text-textPrimary">ApexStore — Commercial E-Commerce & Merchant Suite</h3>
-              <p class="text-xs text-textSecondary mt-0.5">Full-stack platform with Razorpay checkout and admin portal</p>
-            </div>
-            <span class="text-xs font-mono text-emerald-400 px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800">Laravel 12 · MySQL · Razorpay</span>
-          </div>
-          <p class="text-xs text-textSecondary mb-3 leading-relaxed">
-            Integrated Razorpay payment gateways with transaction verification, relational data modeling for inventory/customers, and automated 1-click startup batch scripts for client handover.
-          </p>
-          <div class="flex items-center gap-3 text-xs font-mono">
-            <a href="https://github.com/Kepvion/ecommerce-platform" target="_blank" class="text-textPrimary hover:underline">Code Repository ↗</a>
-          </div>
-        </article>
-
-        <!-- Coding Portfolio Sync -->
-        <article class="p-5 rounded-xl bg-surface border border-borderSubtle hover:border-zinc-700 transition-all">
-          <div class="flex items-start justify-between mb-2">
-            <div>
-              <h3 class="text-base font-semibold text-textPrimary">Coding Portfolio Sync — Developer Tooling</h3>
-              <p class="text-xs text-textSecondary mt-0.5">Automated multi-platform CP metrics sync engine</p>
-            </div>
-            <span class="text-xs font-mono text-purple-400 px-2 py-0.5 rounded bg-purple-950/60 border border-purple-800">Node.js · Express · GitHub API</span>
-          </div>
-          <p class="text-xs text-textSecondary mb-3 leading-relaxed">
-            Aggregates verified LeetCode (GraphQL) and Codeforces stats, generating SVG badge visualizations and automating profile README updates via GitHub REST API with OAuth 2.0.
-          </p>
-          <div class="flex items-center gap-3 text-xs font-mono">
-            <a href="https://github.com/Kepvion/coding-portfolio-sync" target="_blank" class="text-textPrimary hover:underline">Code Repository ↗</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Experience & Leadership -->
-    <section class="mb-12">
-      <h2 class="text-xs font-mono uppercase tracking-widest text-textSecondary mb-4">Experience & Leadership</h2>
-      <div class="space-y-3">
-        <div class="p-4 rounded-xl bg-surface border border-borderSubtle">
-          <div class="flex justify-between items-start mb-1">
-            <div class="font-medium text-textPrimary text-sm">Web Development Intern · Shadfox Training</div>
-            <span class="text-xs font-mono text-textSecondary">Jul 2025 – Present</span>
-          </div>
-          <p class="text-xs text-textSecondary leading-relaxed">
-            Developing modular frontend components, resolving cross-browser UI defects, and managing production Git branching workflows.
-          </p>
-        </div>
-
-        <div class="p-4 rounded-xl bg-surface border border-borderSubtle">
-          <div class="flex justify-between items-start mb-1">
-            <div class="font-medium text-textPrimary text-sm">Core Technical Team Member · E-Cell & GDG IIIT Agartala</div>
-            <span class="text-xs font-mono text-textSecondary">2024 – Present</span>
-          </div>
-          <p class="text-xs text-textSecondary leading-relaxed">
-            Organizing institute coding sessions, mentoring junior students in Git/web development, and collaborating on campus event platforms.
-          </p>
-        </div>
       </div>
     </section>
 
     <!-- Algorithms & Open Source -->
-    <section class="mb-12">
-      <h2 class="text-xs font-mono uppercase tracking-widest text-textSecondary mb-4">Problem Solving & Technical Skills</h2>
+    <section class="mb-14">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-textSecondary mb-4">Technical Proficiencies</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-        <div class="p-4 rounded-xl bg-surface border border-borderSubtle">
-          <div class="font-semibold text-textPrimary mb-1.5 font-mono">Algorithmic Problem Solving</div>
+        <div class="spotlight-card p-4">
+          <div class="font-semibold text-textPrimary mb-1 font-mono">Algorithmic Problem Solving</div>
           <p class="text-textSecondary leading-relaxed">
-            <strong>210+ verified problems</strong> solved across LeetCode & GeeksforGeeks (Trees, Recursion, Binary Search, Stacks, Arrays).
+            <strong>210+ verified problems</strong> solved across LeetCode & GeeksforGeeks with depth in Trees, Recursion, Binary Search, and Stacks.
           </p>
         </div>
-        <div class="p-4 rounded-xl bg-surface border border-borderSubtle">
-          <div class="font-semibold text-textPrimary mb-1.5 font-mono">Tech Stack & Tools</div>
+        <div class="spotlight-card p-4">
+          <div class="font-semibold text-textPrimary mb-1 font-mono">Core Tech Stack</div>
           <p class="text-textSecondary leading-relaxed">
-            TypeScript, JavaScript, Python, C++, React 19, Next.js, Node.js, Express, Laravel 12, MySQL, PostgreSQL, Tailwind CSS, Git.
+            C++, Java, Python, TypeScript, JavaScript, SQL, Node.js, Express, Socket Programming, Linux, Docker, Git.
           </p>
         </div>
       </div>
@@ -212,10 +273,27 @@
 
     <!-- Footer -->
     <footer class="pt-6 border-t border-borderSubtle flex flex-col sm:flex-row justify-between items-center text-xs text-textSecondary gap-2 font-mono">
-      <span>© 2026 Priyanka Kumari · IIIT Agartala</span>
-      <span>Built for performance</span>
+      <span>© 2026 Priyanka Kumari (Kepvion) · IIIT Agartala</span>
+      <span class="text-zinc-500">Built with semantic HTML5, Tailwind & Vanilla JS</span>
     </footer>
 
   </main>
+
+  <!-- 1. Spotlight Cursor Script -->
+  <script>
+    document.querySelectorAll('.spotlight-card').forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+  </script>
+
+  <!-- 2. The Legendary Oneko Pixel Cat Script (Chases your cursor!) -->
+  <script src="https://raw.githack.com/adryd325/oneko.js/main/oneko.js"></script>
+
 </body>
 </html>
