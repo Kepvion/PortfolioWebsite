@@ -1,112 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priyanka Kumari - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priyanka Kumari | IIIT Agartala · Amazon Future Engineer Scholar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            background: '#0a0a0d',
+            surface: '#121217',
+            surfaceHover: '#181820',
+            borderSubtle: '#22222a',
+            accent: '#3b82f6',
+            textPrimary: '#f4f4f6',
+            textSecondary: '#a1a1aa'
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { background-color: #0a0a0d; color: #f4f4f6; font-family: 'Inter', sans-serif; }
+  </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Priyanka Kumari</h1>
-            <p>Computer Science Student | Aspiring SWE & Quant</p>
-            <p>
-                📞 +91-8252994451 | ✉️ priyanka06kumari0403@gmail.com
-            </p>
-            <p>
-                <a href="https://linkedin.com/in/priyanka-kumari-059776271" target="_blank">LinkedIn</a> | 
-                <a href="https://github.com/Wanderer65" target="_blank">GitHub</a>
-            </p>
-        </div>
+<body class="min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white">
+
+  <!-- Main Container -->
+  <main class="max-w-3xl mx-auto px-6 py-14 sm:py-20 w-full">
+    
+    <!-- Hero / Profile Header -->
+    <header class="mb-12">
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-amber-950/70 text-amber-300 border border-amber-800/80">
+          ⭐ Amazon Future Engineer Scholar
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-blue-950/70 text-blue-300 border border-blue-800/80">
+          🏛️ IIIT Agartala '26
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-emerald-950/70 text-emerald-300 border border-emerald-800/80">
+          ⚡ Available for Internships
+        </span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-textPrimary mb-3">
+        Priyanka Kumari
+      </h1>
+      <p class="text-base sm:text-lg text-textSecondary leading-relaxed">
+        Computer Science undergraduate at <strong class="text-textPrimary font-semibold">IIIT Agartala</strong>. 
+        Full-stack engineer building production SaaS dashboards, developer tooling, and API backends with React 19, Node.js, and modern cloud stacks.
+      </p>
+
+      <!-- Contact & Social Links -->
+      <div class="flex flex-wrap items-center gap-4 mt-6 text-sm font-mono text-textSecondary">
+        <a href="https://github.com/Kepvion" target="_blank" class="hover:text-blue-400 transition-colors">GitHub ↗</a>
+        <a href="https://linkedin.com/in/priyanka-kumari-059776271" target="_blank" class="hover:text-blue-400 transition-colors">LinkedIn ↗</a>
+        <a href="https://x.com/Kepvion" target="_blank" class="hover:text-blue-400 transition-colors">X (Twitter) ↗</a>
+        <a href="mailto:priyanka06kumari0403@gmail.com" class="hover:text-blue-400 transition-colors">Email ↗</a>
+        <span class="text-zinc-600">|</span>
+        <span class="text-textSecondary">📞 +91-8252994451</span>
+      </div>
     </header>
 
-    <main class="container">
-        <section class="card" id="about">
-            <h2>About Me</h2>
-            <p>A motivated student building projects and learning software engineering.</p>
-        </section>
+    <!-- Key Credentials & Badges Grid -->
+    <section class="mb-12">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-textSecondary mb-4">Honors & Competitions</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+        <div class="p-3.5 rounded-lg bg-surface border border-borderSubtle flex items-start gap-3">
+          <span class="text-amber-400 text-base">🏆</span>
+          <div>
+            <div class="font-semibold text-textPrimary">Amazon Future Engineer Scholar</div>
+            <div class="text-textSecondary">Selected for prestigious Amazon national tech scholarship.</div>
+          </div>
+        </div>
+        <div class="p-3.5 rounded-lg bg-surface border border-borderSubtle flex items-start gap-3">
+          <span class="text-blue-400 text-base">🎯</span>
+          <div>
+            <div class="font-semibold text-textPrimary">Flipkart GRID 2025 Shortlisted</div>
+            <div class="text-textSecondary">National tech competition qualifier.</div>
+          </div>
+        </div>
+        <div class="p-3.5 rounded-lg bg-surface border border-borderSubtle flex items-start gap-3">
+          <span class="text-purple-400 text-base">⚡</span>
+          <div>
+            <div class="font-semibold text-textPrimary">Inter-IIIT Hackathon Finalist</div>
+            <div class="text-textSecondary">Selected among top teams across national IIIT institutes.</div>
+          </div>
+        </div>
+        <div class="p-3.5 rounded-lg bg-surface border border-borderSubtle flex items-start gap-3">
+          <span class="text-emerald-400 text-base">🛡️</span>
+          <div>
+            <div class="font-semibold text-textPrimary">Cybersecurity Hackathon Finalist</div>
+            <div class="text-textSecondary">State-Level Security & Ideathon Runner-Up 2025.</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="card" id="education">
-            <h2>Education</h2>
-            <p><strong>Indian Institute of Information Technology, Agartala</strong></p>
-            <p>B.Tech in Computer Science and Engineering</p>
-            <p>Relevant Coursework: Data Structures, Programming Fundamentals, Discrete Mathematics</p>
-        </section>
-
-        <section class="card" id="experience">
-            <h2>Experience</h2>
-            <h3>Web Development Intern | Shadfox Training Internship</h3>
-            <p>Jul 2025 – Present (Remote)</p>
-            <ul>
-                <li>Built and modified frontend components using HTML, CSS, and JavaScript.</li>
-                <li>Debugged UI issues and improved component behavior through iterative testing.</li>
-                <li>Used Git and GitHub for version control, branching, and pull requests.</li>
-            </ul>
-
-            <h3>Tech Core Team Member | Entrepreneurship Cell, IIIT Agartala</h3>
-            <ul>
-                <li>Collaborated on frontend components and college-level events using GitHub workflow.</li>
-            </ul>
-
-            <h3>Core Technical Club Member | GDG IIIT Agartala</h3>
-            <ul>
-                <li>Contributed to workshops, coding sessions, and collaborative GitHub projects.</li>
-            </ul>
-
-            <h3>Open Source Contributor | SSOC, GSSoC, Hacktoberfest 2025</h3>
-            <ul>
-                <li>Raised meaningful pull requests and improved documentation in open-source projects.</li>
-            </ul>
-        </section>
-
-        <section class="card" id="projects">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project">
-                    <h3>Portfolio Website</h3>
-                    <p>Built a responsive personal website to showcase projects and technical skills.</p>
-                </div>
-                <div class="project">
-                    <h3>Task Manager App</h3>
-                    <p>CRUD-based To-Do application to practice JavaScript fundamentals.</p>
-                </div>
-                <div class="project">
-                    <h3>Student Record Management System</h3>
-                    <p>Console-based Python app with CRUD operations and modular programming.</p>
-                </div>
-                <div class="project">
-                    <h3>Task Automation Scripts</h3>
-                    <p>Python scripts for file handling and basic automation tasks.</p>
-                </div>
+    <!-- Featured Engineering Projects -->
+    <section class="mb-12">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-textSecondary mb-4">Featured Production Systems</h2>
+      
+      <div class="space-y-4">
+        <!-- Clabsy -->
+        <article class="p-5 rounded-xl bg-surface border border-borderSubtle hover:border-zinc-700 transition-all">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <h3 class="text-base font-semibold text-textPrimary">Clabsy — Real Estate CRM & Sales SaaS</h3>
+              <p class="text-xs text-textSecondary mt-0.5">Commercial SaaS dashboard for customer pipelines, inventory, and site visits</p>
             </div>
-        </section>
+            <span class="text-xs font-mono text-blue-400 px-2 py-0.5 rounded bg-blue-950/60 border border-blue-800">React 19 · Tailwind v4</span>
+          </div>
+          <p class="text-xs text-textSecondary mb-3 leading-relaxed">
+            Engineered centralized state management with React Context API across 8+ views, dynamic plot booking workflows, lead scoring, and automated toast feedback.
+          </p>
+          <div class="flex items-center gap-3 text-xs font-mono">
+            <a href="https://github.com/Kepvion/clabsy-sales" target="_blank" class="text-textPrimary hover:underline">Code Repository ↗</a>
+          </div>
+        </article>
 
-        <section class="card" id="achievements">
-            <h2>Achievements</h2>
-            <ul>
-                <li>Runner-Up – Ideathon 2025</li>
-                <li>Finalist – Inter-IIIT Hackathon 2025</li>
-                <li>Finalist – State-Level Cybersecurity Hackathon 2025</li>
-                <li>Hacktoberfest Contributor 2025</li>
-                <li>Flipkart GRID Shortlisted 2025</li>
-                <li>Amazon Future Engineer Scholar</li>
-            </ul>
-        </section>
+        <!-- ApexStore -->
+        <article class="p-5 rounded-xl bg-surface border border-borderSubtle hover:border-zinc-700 transition-all">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <h3 class="text-base font-semibold text-textPrimary">ApexStore — Commercial E-Commerce & Merchant Suite</h3>
+              <p class="text-xs text-textSecondary mt-0.5">Full-stack platform with Razorpay checkout and admin portal</p>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800">Laravel 12 · MySQL · Razorpay</span>
+          </div>
+          <p class="text-xs text-textSecondary mb-3 leading-relaxed">
+            Integrated Razorpay payment gateways with transaction verification, relational data modeling for inventory/customers, and automated 1-click startup batch scripts for client handover.
+          </p>
+          <div class="flex items-center gap-3 text-xs font-mono">
+            <a href="https://github.com/Kepvion/ecommerce-platform" target="_blank" class="text-textPrimary hover:underline">Code Repository ↗</a>
+          </div>
+        </article>
 
-        <section class="card" id="skills">
-            <h2>Technical Skills</h2>
-            <ul>
-                <li><strong>Languages:</strong> Python, HTML/CSS</li>
-                <li><strong>Tools:</strong> Git, GitHub, VS Code, PyCharm, Windows, Linux Basics</li>
-                <li><strong>Core Concepts:</strong> OOP, Basic Data Structures, Problem Solving</li>
-                <li><strong>Soft Skills:</strong> Leadership, Communication, Teamwork, Public Speaking</li>
-            </ul>
-        </section>
-    </main>
+        <!-- Coding Portfolio Sync -->
+        <article class="p-5 rounded-xl bg-surface border border-borderSubtle hover:border-zinc-700 transition-all">
+          <div class="flex items-start justify-between mb-2">
+            <div>
+              <h3 class="text-base font-semibold text-textPrimary">Coding Portfolio Sync — Developer Tooling</h3>
+              <p class="text-xs text-textSecondary mt-0.5">Automated multi-platform CP metrics sync engine</p>
+            </div>
+            <span class="text-xs font-mono text-purple-400 px-2 py-0.5 rounded bg-purple-950/60 border border-purple-800">Node.js · Express · GitHub API</span>
+          </div>
+          <p class="text-xs text-textSecondary mb-3 leading-relaxed">
+            Aggregates verified LeetCode (GraphQL) and Codeforces stats, generating SVG badge visualizations and automating profile README updates via GitHub REST API with OAuth 2.0.
+          </p>
+          <div class="flex items-center gap-3 text-xs font-mono">
+            <a href="https://github.com/Kepvion/coding-portfolio-sync" target="_blank" class="text-textPrimary hover:underline">Code Repository ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Priyanka Kumari</p>
+    <!-- Experience & Leadership -->
+    <section class="mb-12">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-textSecondary mb-4">Experience & Leadership</h2>
+      <div class="space-y-3">
+        <div class="p-4 rounded-xl bg-surface border border-borderSubtle">
+          <div class="flex justify-between items-start mb-1">
+            <div class="font-medium text-textPrimary text-sm">Web Development Intern · Shadfox Training</div>
+            <span class="text-xs font-mono text-textSecondary">Jul 2025 – Present</span>
+          </div>
+          <p class="text-xs text-textSecondary leading-relaxed">
+            Developing modular frontend components, resolving cross-browser UI defects, and managing production Git branching workflows.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-surface border border-borderSubtle">
+          <div class="flex justify-between items-start mb-1">
+            <div class="font-medium text-textPrimary text-sm">Core Technical Team Member · E-Cell & GDG IIIT Agartala</div>
+            <span class="text-xs font-mono text-textSecondary">2024 – Present</span>
+          </div>
+          <p class="text-xs text-textSecondary leading-relaxed">
+            Organizing institute coding sessions, mentoring junior students in Git/web development, and collaborating on campus event platforms.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Algorithms & Open Source -->
+    <section class="mb-12">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-textSecondary mb-4">Problem Solving & Technical Skills</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="p-4 rounded-xl bg-surface border border-borderSubtle">
+          <div class="font-semibold text-textPrimary mb-1.5 font-mono">Algorithmic Problem Solving</div>
+          <p class="text-textSecondary leading-relaxed">
+            <strong>210+ verified problems</strong> solved across LeetCode & GeeksforGeeks (Trees, Recursion, Binary Search, Stacks, Arrays).
+          </p>
+        </div>
+        <div class="p-4 rounded-xl bg-surface border border-borderSubtle">
+          <div class="font-semibold text-textPrimary mb-1.5 font-mono">Tech Stack & Tools</div>
+          <p class="text-textSecondary leading-relaxed">
+            TypeScript, JavaScript, Python, C++, React 19, Next.js, Node.js, Express, Laravel 12, MySQL, PostgreSQL, Tailwind CSS, Git.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-6 border-t border-borderSubtle flex flex-col sm:flex-row justify-between items-center text-xs text-textSecondary gap-2 font-mono">
+      <span>© 2026 Priyanka Kumari · IIIT Agartala</span>
+      <span>Built for performance</span>
     </footer>
+
+  </main>
 </body>
 </html>
